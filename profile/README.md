@@ -1,5 +1,5 @@
 # Überbetriebliche Kurse
-## Datenbanke `Ük 106`
+## Datenbank `Ük 106`
 - LB-Scripts
 
 ## Cloud `Ük 109`
