@@ -41,7 +41,7 @@
 - [LaborGUI](https://github.com/BA-Module/Applikationsentwicklung-LaborGui)
 
 ## Scrum
-- [Minecraft-Mod](https://github.com/BA-Module/SCRUM-Minecraft-mod-test)
+- [Minecraft-Mod](https://github.com/BA-Module/Minecraft-Mods)
 
 ## Projektmodul
 - [AI-Beispiele](https://github.com/BA-Module/Projektmodul-AI-Beispiele)
