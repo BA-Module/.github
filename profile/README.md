@@ -42,3 +42,6 @@
 
 ## Scrum
 - [Minecraft-Mod](https://github.com/BA-Module/SCRUM-Minecraft-mod-test)
+
+## Projektmodul
+- [AI-Beispiele](https://github.com/BA-Module/AppInACloud-AI-Beispiele)
