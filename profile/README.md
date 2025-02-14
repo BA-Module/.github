@@ -40,6 +40,9 @@
 - [Casino](https://github.com/BA-Module/Applikationsentwicklung-Casino)
 - [LaborGUI](https://github.com/BA-Module/Applikationsentwicklung-LaborGui)
 
+## Backend
+- [Campflix](https://github.com/BA-Module/Backend-Campflix)
+
 ## Scrum
 - [Minecraft-Mod](https://github.com/BA-Module/Minecraft-Mods)
 
