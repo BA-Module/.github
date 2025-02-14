@@ -1,6 +1,6 @@
 # Überbetriebliche Kurse
 ## Datenbank `Ük 106`
-- LB-Scripts
+
 
 ## Cloud `Ük 109`
 - [Create-Users](https://github.com/BA-Module/Cloud-Create-Users)
