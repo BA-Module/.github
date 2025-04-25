@@ -24,7 +24,8 @@
 - [LBScript](https://github.com/BA-Module/IOE-LBScript)
 
 ## Backend `Ük 295`
-- [Campflix](https://github.com/BA-Module/Backend-Campflix)
+- [CampNews-BE](https://github.com/BA-Module/Backend-Campflix)
+- [CampNews-FE](https://github.com/BA-Module/CampNews-Frontend)
 
 ## Mobile App `Ük 335`
 - [Sensor-Example](https://github.com/BA-Module/MobApp_React_Native_Sensor_Example)
