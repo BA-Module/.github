@@ -1,7 +1,3 @@
-# 📘 Überbetriebliche Kurse
-
----
-
 ## 🗃️ ÜK Modules
 
 ### Datenbank `Ük 106`
