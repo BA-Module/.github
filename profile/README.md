@@ -42,6 +42,11 @@ _(No repositories listed)_
 
 ---
 
+### Frontend `Ük 294`
+- [CampNews Frontend 2025](https://github.com/BA-Module/CampNews-Frontend25)
+
+---
+
 ### Mobile App `Ük 335`
 - [Sensor Example](https://github.com/BA-Module/MobApp_React_Native_Sensor_Example)
 - [React Native Example](https://github.com/BA-Module/MobApp_React_Native_Example)
