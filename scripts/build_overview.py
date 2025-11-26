@@ -91,7 +91,7 @@ def build_standard_table(cfg: dict) -> str:
             name = repo.get("name", "")
             url = repo.get("url", "")
             # Markdown link for the repo name
-            link = f"[{name" if url else ""
+            link = f"[{name}]({f url else ""
             lines.append(
                 f"| {mtype} | {uek} | {uek_number} | {name} | {link} |"
             )
