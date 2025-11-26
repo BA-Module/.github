@@ -76,7 +76,6 @@ def fetch_dependabot_counts(owner: str, repo: str, session: requests.Session):
 def md_link(label: str, url: str) -> str:
     return f"[{label}"
 
-
 def build_standard_table(cfg: dict) -> str:
     header = (
         "| Type | ÜK/Module | ÜK Number | Repository Name | Repository URL |\n"
@@ -90,8 +89,7 @@ def build_standard_table(cfg: dict) -> str:
         for repo in module.get("repos", []):
             name = repo.get("name", "")
             url = repo.get("url", "")
-            # Markdown link for the repo name
-            link = f"[{name}]({f url else ""
+            link = f"[{ame}" if url else ""
             lines.append(
                 f"| {mtype} | {uek} | {uek_number} | {name} | {link} |"
             )
