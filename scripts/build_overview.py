@@ -74,7 +74,7 @@ def fetch_dependabot_counts(owner: str, repo: str, session: requests.Session):
     return (total, severities, {"reason": "ok"})
 
 def md_link(label: str, url: str) -> str:
-    return f"[{label"
+    return f"[{label}"
 
 def build_standard_table(cfg: dict) -> str:
     # Table header
