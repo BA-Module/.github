@@ -1,3 +1,6 @@
+<!-- CAMPUS-OVERVIEW:START -->
+
+<!-- CAMPUS-OVERVIEW:END -->
 ## 🗃️ ÜK Modules
 
 ### Datenbank `Ük 106`
