@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 import argparse
 import os
@@ -33,6 +32,7 @@ def fetch_dependabot_counts(owner: str, repo: str, session: requests.Session):
 
     while url:
         r = session.get(url, headers=headers, timeout=30)
+
         if r.status_code == 404:
             return (None, {}, {"reason": "not_found"})
         if r.status_code == 403:
@@ -74,71 +74,85 @@ def fetch_dependabot_counts(owner: str, repo: str, session: requests.Session):
     return (total, severities, {"reason": "ok"})
 
 def md_link(label: str, url: str) -> str:
-    return f"[{label}"
+    return f"[{label}]({url})"
 
-def build_standard_table(cfg: dict) -> str:
-    header = (
-        "| Type | ÜK/Module | ÜK Number | Repository Name | Repository URL |\n"
-        "|------|-----------|-----------|----------------|----------------|\n"
-    )
-    lines = [header]
-    for module in cfg["modules"]:
-        mtype = module.get("type", "")
-        uek = module.get("uek", module.get("module", ""))
-        uek_number = str(module.get("uek_number", "")) if "uek_number" in module else ""
-        for repo in module.get("repos", []):
-            name = repo.get("name", "")
+def build_overview_table(cfg: dict) -> str:
+    header = "| Type | UEK / Module | Number | Repository | URL |\n"
+    sep = "|------|--------------|--------|------------|-----|\n"
+    lines = [header, sep]
+
+    for m in cfg["modules"]:
+        mtype = m.get("type", "")
+        label = ""
+        number = "—"
+
+        if mtype == "uek":
+            label = m.get("uek", "")
+            number = m.get("uek_number", "—")
+        elif mtype == "campus":
+            label = m.get("module", "")
+
+        for repo in m.get("repos", []):
+            rname = repo.get("name", "")
             url = repo.get("url", "")
-            link = f"[{ame}" if url else ""
-            lines.append(
-                f"| {mtype} | {uek} | {uek_number} | {name} | {link} |"
-            )
-    return "\n".join(lines)
+            link = md_link(rname, url) if url else ""
+            lines.append(f"| {mtype} | {label} | {number} | {rname} | {link} |\n")
+
+    return "".join(lines)
 
 def build_alerts_table(cfg: dict) -> str:
     session = requests.Session()
     rows: List[dict] = []
 
-    def consider_repo(module_name: str, repo_name: str, repo_url: str):
-        if not repo_url:
-            return
-        try:
-            owner, repo = parse_repo(repo_url)
-        except ValueError:
-            return
-        total, sev, meta = fetch_dependabot_counts(owner, repo, session)
-        if not isinstance(total, int) or total <= 0:
-            return
-        row = {
-            "module": module_name,
-            "repo_name": repo_name,
-            "url": repo_url,
-            "open": total,
-            "critical": int(sev.get("critical", 0)) if isinstance(sev, dict) else "",
-            "high": int(sev.get("high", 0)) if isinstance(sev, dict) else "",
-            "moderate": int(sev.get("moderate", 0)) if isinstance(sev, dict) else "",
-            "low": int(sev.get("low", 0)) if isinstance(sev, dict) else "",
-        }
-        rows.append(row)
+    for m in cfg["modules"]:
+        mtype = m.get("type", "")
+        label = m.get("uek", "") if mtype == "uek" else m.get("module", "")
+        number = str(m.get("uek_number", "")) if mtype == "uek" else ""
 
-    for module in cfg["modules"]:
-        module_name = module.get("uek", module.get("module", ""))
-        for repo in module.get("repos", []):
-            repo_name = repo.get("name", "")
-            repo_url = repo.get("url", "")
-            consider_repo(module_name, repo_name, repo_url)
+        module_id = f"{label} ({number})" if number else label
 
-    rows.sort(key=lambda r: (-r["open"], r["module"], r["repo_name"]))
+        for repo in m.get("repos", []):
+            repo_name = repo.get("name")
+            url = repo.get("url", "")
+            if not url:
+                continue
+
+            try:
+                owner, repo_short = parse_repo(url)
+            except ValueError:
+                continue
+
+            total, sev, meta = fetch_dependabot_counts(owner, repo_short, session)
+
+            if not isinstance(total, int) or total <= 0:
+                continue
+
+            rows.append({
+                "module": module_id,
+                "name": repo_name,
+                "url": url,
+                "open": total,
+                "critical": sev.get("critical", 0),
+                "high": sev.get("high", 0),
+                "moderate": sev.get("moderate", 0),
+                "low": sev.get("low", 0),
+            })
+
+    rows.sort(key=lambda r: (-r["open"], r["module"], r["name"]))
 
     if not rows:
         return "_No open Dependabot alerts across listed repositories._\n"
 
-    header = "| Module | Repo | Open | Critical | High | Moderate | Low |\n"
-    sep = "|------|------|-----:|--------:|-----:|---------:|----:|\n"
+    header = "| Module | Repository | Open | Critical | High | Moderate | Low |\n"
+    sep = "|--------|------------|-----:|---------:|------:|----------:|-----:|\n"
     lines = [header, sep]
+
     for r in rows:
-        repo_link = md_link(r["repo_name"], r["url"])
-        lines.append(f"| **{r['module']}** | {repo_link} | {r['open']} | {r['critical']} | {r['high']} | {r['moderate']} | {r['low']} |\n")
+        link = md_link(r["name"], r["url"])
+        lines.append(
+            f"| **{r['module']}** | {link} | {r['open']} | {r['critical']} | {r['high']} | {r['moderate']} | {r['low']} |\n"
+        )
+
     return "".join(lines)
 
 def replace_between_markers(text: str, start_marker: str, end_marker: str, replacement: str) -> str:
@@ -149,29 +163,34 @@ def replace_between_markers(text: str, start_marker: str, end_marker: str, repla
     return text.rstrip() + "\n\n" + block + "\n"
 
 def main():
-    p = argparse.ArgumentParser(description="Build Campus Module overview and alerts tables.")
-    p.add_argument("--config", default="data/tools.yaml")
-    p.add_argument("--output-md", default="Campus_Module_Consolidated.md")
+    p = argparse.ArgumentParser(description="Build Module overview and alerts tables.")
+    p.add_argument("--config", default="data/modules.yaml")
+    p.add_argument("--output-md", default="Module_Consolidated.md")
     p.add_argument("--update-readme", default="")
-    p.add_argument("--start-marker", default="<!-- CAMPUS-OVERVIEW:START -->")
-    p.add_argument("--end-marker", default="<!-- CAMPUS-OVERVIEW:END -->")
+    p.add_argument("--start-marker", default="<!-- MODULE-OVERVIEW:START -->")
+    p.add_argument("--end-marker", default="<!-- MODULE-OVERVIEW:END -->")
     args = p.parse_args()
 
     cfg = yaml.safe_load(Path(args.config).read_text(encoding="utf-8"))
 
-    # Compose final content
-    title = "# 🎓 Campus Applications — Consolidated Overview\n\n"
-    standard = build_standard_table(cfg)
-    alerts_title = "\n\n## ⚠️ Dependabot Alerts — Weekly Snapshot\n\n_Note: only repositories with **> 0** open alerts are listed. Archived tools are hidden. Sorted by open alerts (desc)._\n\n"
-    alerts_table = build_alerts_table(cfg)
-    content = title + standard + alerts_title + alerts_table + "\n"
+    title = "# 📚 Module Overview — Consolidated\n\n"
+    overview = build_overview_table(cfg)
+
+    alerts_title = (
+        "\n\n## ⚠️ Dependabot Alerts — Weekly Snapshot\n\n"
+        "_Note: only repositories with **> 0** open alerts are listed. Sorted by open alerts (desc)._"
+        "\n\n"
+    )
+    alerts = build_alerts_table(cfg)
+
+    content = title + overview + alerts_title + alerts + "\n"
 
     if args.update_readme:
         readme_path = Path(args.update_readme)
         src = readme_path.read_text(encoding="utf-8")
         updated = replace_between_markers(src, args.start_marker, args.end_marker, content)
         readme_path.write_text(updated, encoding="utf-8")
-        print(f"Updated section in {args.update_readme}")
+        print(f"Updated {args.update_readme}")
     else:
         Path(args.output_md).write_text(content, encoding="utf-8")
         print(f"Wrote {args.output_md}")
