@@ -22,11 +22,14 @@
 | uek | Mobile App | 335 | [React Native Example](https://github.com/BA-Module/MobApp_React_Native_Example) |
 | campus | Python | — | [Hack-the-Inka Frontend](https://github.com/BA-Module/Python-Hack-the-Inka-Frontend) |
 | campus | Python | — | [Hack-the-Inka Backend](https://github.com/BA-Module/Python-Hack-the-Inka-Backend) |
+| campus | Python | — | [Python Lösungen](https://github.com/BA-Module/Python_Loesungen) |
 | campus | WebCamp | — | [Internet History](https://github.com/BA-Module/WebCamp-InternetHistory) |
 | campus | Java | — | [Casino](https://github.com/BA-Module/Applikationsentwicklung-Casino) |
 | campus | Java | — | [Labor GUI](https://github.com/BA-Module/Applikationsentwicklung-LaborGui) |
+| campus | Java | — | [JavaFX Demo Project](https://github.com/BA-Module/JavaFX_DemoProject) |
 | campus | Projektmodul | — | [Minecraft Mod](https://github.com/BA-Module/Minecraft-Mods) |
 | campus | Projektmodul | — | [AI Examples](https://github.com/BA-Module/Projektmodul-AI-Beispiele) |
+| campus | Server & Dienste | — | [Export TEST](https://github.com/BA-Module/SuD-Export-TEST) |
 
 
 ## ⚠️ Dependabot Alerts — Weekly Snapshot
