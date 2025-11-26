@@ -21,11 +21,6 @@ def get_token() -> Optional[str]:
     return os.getenv("GH_TOKEN") or os.getenv("GITHUB_TOKEN")
 
 def fetch_dependabot_counts(owner: str, repo: str, session: requests.Session):
-    """
-    Returns (total_count, by_severity, meta) for open alerts.
-    meta contains keys like {"archived": bool, "reason": "archived|not_found|ok|forbidden"}.
-    We silence warnings for archived/no-access repos by returning meta flags instead of raising.
-    """
     headers = {"Accept": "application/vnd.github+json"}
     token = get_token()
     if token:
@@ -38,7 +33,6 @@ def fetch_dependabot_counts(owner: str, repo: str, session: requests.Session):
 
     while url:
         r = session.get(url, headers=headers, timeout=30)
-        # Graceful handling
         if r.status_code == 404:
             return (None, {}, {"reason": "not_found"})
         if r.status_code == 403:
@@ -56,7 +50,6 @@ def fetch_dependabot_counts(owner: str, repo: str, session: requests.Session):
 
         total += len(data)
         for alert in data:
-            # Robust severity extraction across possible payload shapes
             sev = (
                 ((alert.get("security_vulnerability") or {}).get("severity"))
                 or ((alert.get("security_advisory") or {}).get("severity"))
@@ -67,7 +60,6 @@ def fetch_dependabot_counts(owner: str, repo: str, session: requests.Session):
                 if sev_l in severities:
                     severities[sev_l] += 1
 
-        # pagination
         link = r.headers.get("Link", "")
         next_url = None
         if link:
@@ -82,38 +74,28 @@ def fetch_dependabot_counts(owner: str, repo: str, session: requests.Session):
     return (total, severities, {"reason": "ok"})
 
 def md_link(label: str, url: str) -> str:
-    return f"{label}"
+    return f"[{label"
 
 def build_standard_table(cfg: dict) -> str:
+    # Table header
     header = (
-        " Type \\\n ÜK/Module \\\n ÜK Number \\\n Repository Name \\\n Repository URL \\\n"
+        "Tool | ÜK/Module | ÜK Number | Repository | Repository URL\n"
+        "--- | --- | --- | --- | ---\n"
     )
-    sep = (
-        "------\n"
-        "-------------------\n"
-        "-----------\n"
-        "-------------------------------\n"
-        "--------------------------------------------------------------\n"
-    )
-    lines = [header, sep]
+    lines = [header]
     for module in cfg["modules"]:
         mtype = module.get("type", "")
         uek = module.get("uek", module.get("module", ""))
-        uek_number = str(module.get("uek_number", ""))
+        uek_number = str(module.get("uek_number", "")) if "uek_number" in module else ""
         for repo in module.get("repos", []):
             name = repo.get("name", "")
             url = repo.get("url", "")
             lines.append(
-                f" {mtype} \\\n {uek} \\\n {uek_number} \\\n {name} \\\n {name} \\\n"
+                f"{mtype} | {uek} | {uek_number} | {name} | {md_link(name, url)}"
             )
-    return "".join(lines)
+    return "\n".join(lines)
 
 def build_alerts_table(cfg: dict) -> str:
-    """
-    Separate alerts table, listing only repos with > 0 open alerts.
-    Sorted by Open (desc), then by Module/Repo.
-    Columns: Module | Repo | Open | Critical | High | Moderate | Low
-    """
     session = requests.Session()
     rows: List[dict] = []
 
