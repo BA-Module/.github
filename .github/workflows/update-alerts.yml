@@ -1,0 +1,47 @@
+name: Update Dependabot Alerts Overview
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "22 5 * * 1"   # weekly, Mondays 05:22 UTC
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyyaml requests
+
+      - name: Build overview and update org profile README section
+        env:
+          GH_TOKEN: ${{ secrets.SECURITY_READ_TOKEN }}
+        run: |
+          python scripts/build_overview.py \
+            --config "data/tools.yaml" \
+            --update-readme "profile/README.md" \
+            --start-marker "<!-- CAMPUS-OVERVIEW:START -->" \
+            --end-marker "<!-- CAMPUS-OVERVIEW:END -->"
+
+      - name: Commit changes (if any)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/README.md
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: refresh Dependabot alerts in org profile overview"
+            git push
+          else
+            echo "No changes to commit."
+          fi
