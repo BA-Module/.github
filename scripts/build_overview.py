@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 import argparse
 import os
@@ -81,23 +82,7 @@ def fetch_dependabot_counts(owner: str, repo: str, session: requests.Session):
     return (total, severities, {"reason": "ok"})
 
 def md_link(label: str, url: str) -> str:
-    return f"[{label}]({url})"
-
-def cell_link(entry, default_label: str) -> str:
-    if entry is None:
-        return ""
-    if isinstance(entry, str):
-        s = entry.strip()
-        if s == "?":
-            return "?"
-        return md_link(default_label, s)
-    url = entry.get("url", "").strip()
-    lbl = entry.get("label", default_label)
-    if not url:
-        return ""
-    return md_link(lbl, url)
-
-
+    return f"{label}"
 
 def build_standard_table(cfg: dict) -> str:
     header = (
@@ -119,13 +104,16 @@ def build_standard_table(cfg: dict) -> str:
             name = repo.get("name", "")
             url = repo.get("url", "")
             lines.append(
-                f" {mtype} \\\n {uek} \\\n {uek_number} \\\n {name} \\\n [{name \\\n"
+                f" {mtype} \\\n {uek} \\\n {uek_number} \\\n {name} \\\n {name} \\\n"
             )
     return "".join(lines)
 
-
-
 def build_alerts_table(cfg: dict) -> str:
+    """
+    Separate alerts table, listing only repos with > 0 open alerts.
+    Sorted by Open (desc), then by Module/Repo.
+    Columns: Module | Repo | Open | Critical | High | Moderate | Low
+    """
     session = requests.Session()
     rows: List[dict] = []
 
