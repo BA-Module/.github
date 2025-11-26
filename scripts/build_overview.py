@@ -77,8 +77,8 @@ def md_link(label: str, url: str) -> str:
     return f"[{label}]({url})"
 
 def build_overview_table(cfg: dict) -> str:
-    header = "| Type | UEK / Module | Number | Repository | URL |\n"
-    sep = "|------|--------------|--------|------------|-----|\n"
+    header = "| Type | UEK / Module | Number | URL |\n"
+    sep = "|------|--------------|--------|-----|\n"
     lines = [header, sep]
 
     for m in cfg["modules"]:
@@ -96,7 +96,7 @@ def build_overview_table(cfg: dict) -> str:
             rname = repo.get("name", "")
             url = repo.get("url", "")
             link = md_link(rname, url) if url else ""
-            lines.append(f"| {mtype} | {label} | {number} | {rname} | {link} |\n")
+            lines.append(f"| {mtype} | {label} | {number} | {link} |\n")
 
     return "".join(lines)
 
@@ -143,8 +143,8 @@ def build_alerts_table(cfg: dict) -> str:
     if not rows:
         return "_No open Dependabot alerts across listed repositories._\n"
 
-    header = "| Module | Repository | Open | Critical | High | Moderate | Low |\n"
-    sep = "|--------|------------|-----:|---------:|------:|----------:|-----:|\n"
+    header = "| Module | Repo | Open | Critical | High | Moderate | Low |\n"
+    sep = "|--------|------|-----:|---------:|------:|----------:|-----:|\n"
     lines = [header, sep]
 
     for r in rows:
