@@ -1,1 +1,94 @@
 
+modules:
+  - type: "uek"
+    uek: "Cloud"
+    uek_number: 109
+    repos:
+      - name: "Create Users"
+        url: "https://github.com/BA-Module/Cloud-Create-Users"
+  - type: "uek"
+    uek: "IT-Security"
+    uek_number: 184
+    repos:
+      - name: "Prepare Environment"
+        url: "https://github.com/BA-Module/Security-Prepare-Environment"
+  - type: "uek"
+    uek: "Betriebssysteme"
+    uek_number: 187
+    repos:
+      - name: "Linux Users & Groups Test Script"
+        url: "https://github.com/BA-Module/Betriebssystem-LinuxUsersGroupsTestScript"
+  - type: "uek"
+    uek: "App in a Cloud"
+    uek_number: 210
+    repos:
+      - name: "Fallbeispiel"
+        url: "https://github.com/BA-Module/AppInACloud-Fallbeispiel"
+      - name: "Test Web App"
+        url: "https://github.com/BA-Module/AppInACloud-TestWebApp"
+      - name: "Test Env Web App"
+        url: "https://github.com/BA-Module/AppInACloud-TestEnvWebApp"
+      - name: "Terraform"
+        url: "https://github.com/BA-Module/AppInACloud-Terraform"
+      - name: "Functions"
+        url: "https://github.com/BA-Module/AppInACloud-Functions"
+      - name: "Functions (SAM)"
+        url: "https://github.com/BA-Module/AppInACloud-Functions-Sam"
+  - type: "uek"
+    uek: "Internet of Everything"
+    uek_number: 216
+    repos:
+      - name: "Pi Setup"
+        url: "https://github.com/BA-Module/IOE-PiSetup"
+      - name: "LB Script"
+        url: "https://github.com/BA-Module/IOE-LBScript"
+  - type: "uek"
+    uek: "Backend"
+    uek_number: 295
+    repos:
+      - name: "CampNews Backend"
+        url: "https://github.com/BA-Module/CampNews-Backend"
+      - name: "CampNews Frontend"
+        url: "https://github.com/BA-Module/CampNews-Frontend"
+  - type: "uek"
+    uek: "Frontend"
+    uek_number: 294
+    repos:
+      - name: "CampNews Frontend"
+        url: "https://github.com/BA-Module/CampNews-Frontend25"
+  - type: "uek"
+    uek: "Mobile App"
+    uek_number: 335
+    repos:
+      - name: "Sensor Example"
+        url: "https://github.com/BA-Module/MobApp_React_Native_Sensor_Example"
+      - name: "React Native Example"
+        url: "https://github.com/BA-Module/MobApp_React_Native_Example"
+
+  # Campus modules (no ÜK)
+  - type: "campus"
+    module: "Python"
+    repos:
+      - name: "Hack-the-Inka Frontend"
+        url: "https://github.com/BA-Module/Python-Hack-the-Inka-Frontend"
+      - name: "Hack-the-Inka Backend"
+        url: "https://github.com/BA-Module/Python-Hack-the-Inka-Backend"
+  - type: "campus"
+    module: "WebCamp"
+    repos:
+      - name: "Internet History"
+        url: "https://github.com/BA-Module/WebCamp-InternetHistory"
+  - type: "campus"
+    module: "Java"
+    repos:
+      - name: "Casino"
+        url: "https://github.com/BA-Module/Applikationsentwicklung-Casino"
+      - name: "Labor GUI"
+        url: "https://github.com/BA-Module/Applikationsentwicklung-LaborGui"
+  - type: "campus"
+    module: "Projektmodul"
+    repos:
+      - name: "Minecraft Mod"
+        url: "https://github.com/BA-Module/Minecraft-Mods"
+      - name: "AI Examples"
+        url: "https://github.com/BA-Module/Projektmodul-AI-Beispiele"
