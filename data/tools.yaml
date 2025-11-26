@@ -90,14 +90,14 @@ modules:
       - name: "JavaFX Demo Project"
         url: "https://github.com/BA-Module/JavaFX_DemoProject"
   - type: "campus"
+    module: "Server & Dienste"
+    repos:
+      - name: "Export TEST"
+        url: "https://github.com/BA-Module/SuD-Export-TEST"
+  - type: "campus"
     module: "Projektmodul"
     repos:
       - name: "Minecraft Mod"
         url: "https://github.com/BA-Module/Minecraft-Mods"
       - name: "AI Examples"
         url: "https://github.com/BA-Module/Projektmodul-AI-Beispiele"
-  - type: "campus"
-    module: "Server & Dienste"
-    repos:
-      - name: "Export TEST"
-        url: "https://github.com/BA-Module/SuD-Export-TEST"
