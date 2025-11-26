@@ -17,13 +17,17 @@ def parse_repo(url: str) -> Tuple[str, str]:
     return m.group(1), m.group(2)
 
 def get_token() -> Optional[str]:
-    return (
-        os.getenv("GH_TOKEN")
-        or os.getenv("GITHUB_TOKEN")
-        or os.getenv("SECURITY_READ_TOKEN")
-        or os.getenv("SECURITY_READ_TOKEN_M")
-        or os.getenv("TOKEN")
-    )
+    # Preferred explicit names
+    for key in ["GH_TOKEN", "GITHUB_TOKEN", "SECURITY_READ_TOKEN", "SECURITY_READ_TOKEN_M"]:
+        if os.getenv(key):
+            return os.getenv(key)
+
+    # Fallback: auto-detect any TOKEN-like variable
+    for key, val in os.environ.items():
+        if "TOKEN" in key.upper() and val.strip():
+            return val.strip()
+
+    return None
 
 def fetch_dependabot_counts(owner: str, repo: str, session: requests.Session):
     headers = {"Accept": "application/vnd.github+json"}
