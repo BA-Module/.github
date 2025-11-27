@@ -27,9 +27,9 @@
 | campus | Java | — | [Casino](https://github.com/BA-Module/Applikationsentwicklung-Casino) |
 | campus | Java | — | [Labor GUI](https://github.com/BA-Module/Applikationsentwicklung-LaborGui) |
 | campus | Java | — | [JavaFX Demo Project](https://github.com/BA-Module/JavaFX_DemoProject) |
+| campus | Server & Dienste | — | [Export TEST](https://github.com/BA-Module/SuD-Export-TEST) |
 | campus | Projektmodul | — | [Minecraft Mod](https://github.com/BA-Module/Minecraft-Mods) |
 | campus | Projektmodul | — | [AI Examples](https://github.com/BA-Module/Projektmodul-AI-Beispiele) |
-| campus | Server & Dienste | — | [Export TEST](https://github.com/BA-Module/SuD-Export-TEST) |
 
 
 ## ⚠️ Dependabot Alerts — Weekly Snapshot
@@ -38,7 +38,6 @@ _Note: only repositories with **> 0** open alerts are listed. Sorted by open ale
 
 | Module | Repo | Open | Critical | High | Moderate | Low |
 |--------|------|-----:|---------:|------:|----------:|-----:|
-| **Python** | [Hack-the-Inka Frontend](https://github.com/BA-Module/Python-Hack-the-Inka-Frontend) | 110 | 17 | 48 | 0 | 14 |
 | **App in a Cloud (210)** | [Test Env Web App](https://github.com/BA-Module/AppInACloud-TestEnvWebApp) | 23 | 1 | 5 | 0 | 5 |
 | **App in a Cloud (210)** | [Fallbeispiel](https://github.com/BA-Module/AppInACloud-Fallbeispiel) | 19 | 1 | 5 | 0 | 4 |
 | **Backend (295)** | [CampNews Frontend](https://github.com/BA-Module/CampNews-Frontend) | 13 | 1 | 1 | 0 | 4 |
