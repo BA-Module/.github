@@ -48,8 +48,6 @@ modules:
     repos:
       - name: "CampNews Backend"
         url: "https://github.com/BA-Module/CampNews-Backend"
-      - name: "CampNews Frontend"
-        url: "https://github.com/BA-Module/CampNews-Frontend"
   - type: "uek"
     uek: "Frontend"
     uek_number: 294
