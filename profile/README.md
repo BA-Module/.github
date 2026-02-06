@@ -16,7 +16,6 @@
 | uek | Internet of Everything | 216 | [Pi Setup](https://github.com/BA-Module/IOE-PiSetup) |
 | uek | Internet of Everything | 216 | [LB Script](https://github.com/BA-Module/IOE-LBScript) |
 | uek | Backend | 295 | [CampNews Backend](https://github.com/BA-Module/CampNews-Backend) |
-| uek | Backend | 295 | [CampNews Frontend](https://github.com/BA-Module/CampNews-Frontend) |
 | uek | Frontend | 294 | [CampNews Frontend](https://github.com/BA-Module/CampNews-Frontend25) |
 | uek | Mobile App | 335 | [Sensor Example](https://github.com/BA-Module/MobApp_React_Native_Sensor_Example) |
 | uek | Mobile App | 335 | [React Native Example](https://github.com/BA-Module/MobApp_React_Native_Example) |
@@ -38,10 +37,9 @@ _Note: only repositories with **> 0** open alerts are listed. Sorted by open ale
 
 | Module | Repo | Open | Critical | High | Moderate | Low |
 |--------|------|-----:|---------:|------:|----------:|-----:|
-| **App in a Cloud (210)** | [Test Env Web App](https://github.com/BA-Module/AppInACloud-TestEnvWebApp) | 33 | 1 | 11 | 0 | 5 |
-| **App in a Cloud (210)** | [Fallbeispiel](https://github.com/BA-Module/AppInACloud-Fallbeispiel) | 27 | 1 | 9 | 0 | 4 |
-| **Backend (295)** | [CampNews Frontend](https://github.com/BA-Module/CampNews-Frontend) | 25 | 3 | 5 | 0 | 4 |
-| **Frontend (294)** | [CampNews Frontend](https://github.com/BA-Module/CampNews-Frontend25) | 24 | 2 | 6 | 0 | 3 |
+| **App in a Cloud (210)** | [Test Env Web App](https://github.com/BA-Module/AppInACloud-TestEnvWebApp) | 31 | 1 | 11 | 0 | 5 |
+| **App in a Cloud (210)** | [Fallbeispiel](https://github.com/BA-Module/AppInACloud-Fallbeispiel) | 25 | 1 | 9 | 0 | 4 |
+| **Frontend (294)** | [CampNews Frontend](https://github.com/BA-Module/CampNews-Frontend25) | 22 | 2 | 6 | 0 | 3 |
 | **App in a Cloud (210)** | [Functions](https://github.com/BA-Module/AppInACloud-Functions) | 4 | 0 | 0 | 0 | 2 |
 | **App in a Cloud (210)** | [Functions (SAM)](https://github.com/BA-Module/AppInACloud-Functions-Sam) | 4 | 0 | 0 | 0 | 2 |
 
