@@ -16,7 +16,7 @@
 | uek | Internet of Everything | 216 | [Pi Setup](https://github.com/BA-Module/IOE-PiSetup) |
 | uek | Internet of Everything | 216 | [LB Script](https://github.com/BA-Module/IOE-LBScript) |
 | uek | Backend | 295 | [CampNews Backend](https://github.com/BA-Module/CampNews-Backend) |
-| uek | Frontend | 294 | [CampNews Frontend](https://github.com/BA-Module/CampNews-Frontend25) |
+| uek | Frontend | 294 | [CampNews - Frontend - all Levels](https://github.com/BA-Module/CampNews2026_all_levels) <br> [CampNews Frontend](https://github.com/BA-Module/CampNews-Frontend25) (temp, can be removed in summer 26)|
 | uek | Mobile App | 335 | [Sensor Example](https://github.com/BA-Module/MobApp_React_Native_Sensor_Example) |
 | uek | Mobile App | 335 | [React Native Example](https://github.com/BA-Module/MobApp_React_Native_Example) |
 | campus | Python | — | [Hack-the-Inka Frontend](https://github.com/BA-Module/Python-Hack-the-Inka-Frontend) |
