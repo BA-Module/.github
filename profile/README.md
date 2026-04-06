@@ -37,8 +37,11 @@ _Note: only repositories with **> 0** open alerts are listed. Sorted by open ale
 
 | Module | Repo | Open | Critical | High | Moderate | Low |
 |--------|------|-----:|---------:|------:|----------:|-----:|
-| **App in a Cloud (210)** | [Fallbeispiel](https://github.com/BA-Module/AppInACloud-Fallbeispiel) | 1 | 0 | 0 | 0 | 0 |
-| **App in a Cloud (210)** | [Test Env Web App](https://github.com/BA-Module/AppInACloud-TestEnvWebApp) | 1 | 0 | 0 | 0 | 0 |
+| **App in a Cloud (210)** | [Test Env Web App](https://github.com/BA-Module/AppInACloud-TestEnvWebApp) | 47 | 2 | 20 | 0 | 5 |
+| **App in a Cloud (210)** | [Fallbeispiel](https://github.com/BA-Module/AppInACloud-Fallbeispiel) | 40 | 1 | 18 | 0 | 4 |
+| **Frontend (294)** | [CampNews Frontend](https://github.com/BA-Module/CampNews-Frontend25) | 31 | 2 | 9 | 0 | 4 |
+| **App in a Cloud (210)** | [Functions](https://github.com/BA-Module/AppInACloud-Functions) | 8 | 0 | 2 | 0 | 2 |
+| **App in a Cloud (210)** | [Functions (SAM)](https://github.com/BA-Module/AppInACloud-Functions-Sam) | 8 | 0 | 2 | 0 | 2 |
 
 
 <!-- CAMPUS-OVERVIEW:END -->
