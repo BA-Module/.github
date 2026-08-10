@@ -37,11 +37,11 @@ _Note: only repositories with **> 0** open alerts are listed. Sorted by open ale
 
 | Module | Repo | Open | Critical | High | Moderate | Low |
 |--------|------|-----:|---------:|------:|----------:|-----:|
-| **App in a Cloud (210)** | [Test Env Web App](https://github.com/BA-Module/AppInACloud-TestEnvWebApp) | 90 | 2 | 40 | 0 | 9 |
-| **Frontend (294)** | [CampNews Frontend](https://github.com/BA-Module/CampNews-Frontend25) | 85 | 3 | 36 | 0 | 9 |
-| **App in a Cloud (210)** | [Fallbeispiel](https://github.com/BA-Module/AppInACloud-Fallbeispiel) | 83 | 1 | 38 | 0 | 8 |
-| **App in a Cloud (210)** | [Functions](https://github.com/BA-Module/AppInACloud-Functions) | 13 | 0 | 3 | 0 | 4 |
-| **App in a Cloud (210)** | [Functions (SAM)](https://github.com/BA-Module/AppInACloud-Functions-Sam) | 13 | 0 | 3 | 0 | 4 |
+| **App in a Cloud (210)** | [Test Env Web App](https://github.com/BA-Module/AppInACloud-TestEnvWebApp) | 95 | 2 | 44 | 0 | 9 |
+| **App in a Cloud (210)** | [Fallbeispiel](https://github.com/BA-Module/AppInACloud-Fallbeispiel) | 88 | 1 | 42 | 0 | 8 |
+| **Frontend (294)** | [CampNews Frontend](https://github.com/BA-Module/CampNews-Frontend25) | 87 | 3 | 37 | 0 | 9 |
+| **App in a Cloud (210)** | [Functions](https://github.com/BA-Module/AppInACloud-Functions) | 16 | 0 | 3 | 0 | 4 |
+| **App in a Cloud (210)** | [Functions (SAM)](https://github.com/BA-Module/AppInACloud-Functions-Sam) | 16 | 0 | 3 | 0 | 4 |
 
 
 <!-- CAMPUS-OVERVIEW:END -->
