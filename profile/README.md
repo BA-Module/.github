@@ -37,9 +37,9 @@ _Note: only repositories with **> 0** open alerts are listed. Sorted by open ale
 
 | Module | Repo | Open | Critical | High | Moderate | Low |
 |--------|------|-----:|---------:|------:|----------:|-----:|
-| **App in a Cloud (210)** | [Test Env Web App](https://github.com/BA-Module/AppInACloud-TestEnvWebApp) | 106 | 6 | 50 | 0 | 9 |
-| **App in a Cloud (210)** | [Fallbeispiel](https://github.com/BA-Module/AppInACloud-Fallbeispiel) | 99 | 5 | 48 | 0 | 8 |
-| **Frontend (294)** | [CampNews Frontend](https://github.com/BA-Module/CampNews-Frontend25) | 99 | 7 | 42 | 0 | 9 |
+| **App in a Cloud (210)** | [Test Env Web App](https://github.com/BA-Module/AppInACloud-TestEnvWebApp) | 107 | 6 | 51 | 0 | 9 |
+| **Frontend (294)** | [CampNews Frontend](https://github.com/BA-Module/CampNews-Frontend25) | 106 | 8 | 44 | 0 | 9 |
+| **App in a Cloud (210)** | [Fallbeispiel](https://github.com/BA-Module/AppInACloud-Fallbeispiel) | 101 | 5 | 49 | 0 | 8 |
 | **App in a Cloud (210)** | [Functions](https://github.com/BA-Module/AppInACloud-Functions) | 18 | 0 | 4 | 0 | 5 |
 | **App in a Cloud (210)** | [Functions (SAM)](https://github.com/BA-Module/AppInACloud-Functions-Sam) | 18 | 0 | 4 | 0 | 5 |
 
