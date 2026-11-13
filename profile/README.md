@@ -23,9 +23,10 @@
 | campus | Python | — | [Hack-the-Inka Backend](https://github.com/BA-Module/Python-Hack-the-Inka-Backend) |
 | campus | Python | — | [Python Lösungen](https://github.com/BA-Module/Python_Loesungen) |
 | campus | WebCamp | — | [Internet History](https://github.com/BA-Module/WebCamp-InternetHistory) |
-| campus | Java | — | [Casino](https://github.com/BA-Module/Applikationsentwicklung-Casino) |
-| campus | Java | — | [Labor GUI](https://github.com/BA-Module/Applikationsentwicklung-LaborGui) |
-| campus | Java | — | [JavaFX Demo Project](https://github.com/BA-Module/JavaFX_DemoProject) |
+| campus | Softwareentwicklung | — | [CampusKebab](https://github.com/BA-Module/SoftwareEntwicklung_KebabCampus) |
+| campus | Softwareentwicklung | — | [Casino](https://github.com/BA-Module/Applikationsentwicklung-Casino) |
+| campus | Softwareentwicklung | — | [Labor GUI](https://github.com/BA-Module/Applikationsentwicklung-LaborGui) |
+| campus | Softwareentwicklung | — | [JavaFX Demo Project](https://github.com/BA-Module/JavaFX_DemoProject) |
 | campus | Server & Dienste | — | [Export TEST](https://github.com/BA-Module/SuD-Export-TEST) |
 | campus | Projektmodul | — | [Minecraft Mod](https://github.com/BA-Module/Minecraft-Mods) |
 | campus | Projektmodul | — | [AI Examples](https://github.com/BA-Module/Projektmodul-AI-Beispiele) |
