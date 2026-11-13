@@ -79,8 +79,10 @@ modules:
       - name: "Internet History"
         url: "https://github.com/BA-Module/WebCamp-InternetHistory"
   - type: "campus"
-    module: "Java"
+    module: "Softwareentwicklung"
     repos:
+      - name: "CampusKebab"
+        url: "https://github.com/BA-Module/SoftwareEntwicklung_KebabCampus"
       - name: "Casino"
         url: "https://github.com/BA-Module/Applikationsentwicklung-Casino"
       - name: "Labor GUI"
